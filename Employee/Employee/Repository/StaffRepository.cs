@@ -1,10 +1,11 @@
-﻿using Employee.Model;
+﻿using Employee.Interface;
+using Employee.Model;
 using MongoDB.Driver;
 using SharpCompress.Common;
 
 namespace Employee.Repository
 {
-    public class StaffRepository
+    public class StaffRepository : IStaffRepository
     {
         private const string collectionName = "staffs";
         private readonly IMongoCollection<Staff> dbCollection;

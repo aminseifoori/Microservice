@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Employee.Dtos;
+using Employee.Interface;
 using Employee.Model;
 using Employee.Repository;
 using Microsoft.AspNetCore.Mvc;
@@ -10,12 +11,13 @@ namespace Employee.Controllers
     [ApiController]
     public class StaffController : ControllerBase
     {
-        private readonly StaffRepository repository = new();
         private readonly IMapper mapper;
+        private readonly IStaffRepository repository;
 
-        public StaffController(IMapper _mapper)
+        public StaffController(IMapper _mapper, IStaffRepository _repository)
         {
             mapper = _mapper;
+            repository = _repository;
         }
 
         [HttpGet]
@@ -39,6 +41,7 @@ namespace Employee.Controllers
         public async Task<IActionResult> Create([FromBody] CreateStaffDto staffDto) 
         {
             var staff = mapper.Map<Staff>(staffDto);
+            staff.CreatedDate = DateTime.Now;
             await repository.CreateAsync(staff);
             return CreatedAtAction(nameof(GetById), new { id = staff.Id }, staff);
         }

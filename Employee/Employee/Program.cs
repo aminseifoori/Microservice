@@ -1,4 +1,10 @@
 
+using Employee.Interface;
+using Employee.Repository;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.Serializers;
+
 namespace Employee
 {
     public class Program
@@ -6,6 +12,9 @@ namespace Employee
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            //to serialize GUID & DateTime
+            BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
+            BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(BsonType.String));
 
             // Add services to the container.
 
@@ -16,6 +25,9 @@ namespace Employee
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddAutoMapper(typeof(Program));
+
+            builder.Services.AddTransient<IStaffRepository, StaffRepository>();
 
             var app = builder.Build();
 
