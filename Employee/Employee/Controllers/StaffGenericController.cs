@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
+using Common;
 using Employee.Dtos;
 using Employee.Model;
-using Employee.Repository.Interface;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Employee.Controllers

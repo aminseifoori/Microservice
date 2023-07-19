@@ -46,3 +46,5 @@ C:\Projects\Microservice\Employee\Employee\obj\Debug\net7.0\Employee.pdb
 C:\Projects\Microservice\Employee\Employee\obj\Debug\net7.0\Employee.genruntimeconfig.cache
 C:\Projects\Microservice\Employee\Employee\obj\Debug\net7.0\ref\Employee.dll
 C:\Projects\Microservice\Employee\Employee\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Projects\Microservice\Employee\Employee\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Projects\Microservice\Employee\Employee\bin\Debug\net7.0\Common.dll

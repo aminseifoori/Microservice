@@ -1,12 +1,9 @@
-using Employee.Extenstions;
+using Common.Extenstions;
+using Common.Settings;
 using Employee.Model;
 using Employee.Repository;
 using Employee.Repository.Interface;
-using Employee.Settings;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization;
-using MongoDB.Bson.Serialization.Serializers;
-using MongoDB.Driver;
+
 
 namespace Employee
 {

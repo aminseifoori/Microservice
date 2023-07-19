@@ -1,4 +1,5 @@
-﻿using Employee.Model.Interface;
+﻿
+using Common;
 
 namespace Employee.Model
 {
