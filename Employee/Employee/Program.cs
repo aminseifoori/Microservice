@@ -1,9 +1,12 @@
-
-using Employee.Interface;
+using Employee.Extenstions;
+using Employee.Model;
 using Employee.Repository;
+using Employee.Repository.Interface;
+using Employee.Settings;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
+using MongoDB.Driver;
 
 namespace Employee
 {
@@ -12,12 +15,12 @@ namespace Employee
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            //to serialize GUID & DateTime
-            BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
-            BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(BsonType.String));
+
+            var serviceSettings = builder.Configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
+            //Use the Extension to add mongo DB
+            builder.Services.AddMondoDb(builder.Configuration);
 
             // Add services to the container.
-
             builder.Services.AddControllers(options =>
             {
                 options.SuppressAsyncSuffixInActionNames = false;
@@ -27,7 +30,11 @@ namespace Employee
             builder.Services.AddSwaggerGen();
             builder.Services.AddAutoMapper(typeof(Program));
 
+            //Add Staff Repository Service
             builder.Services.AddTransient<IStaffRepository, StaffRepository>();
+
+            //Add General Repository with Extension   
+            builder.Services.AddRepository<Staff>("staffs");
 
             var app = builder.Build();
 

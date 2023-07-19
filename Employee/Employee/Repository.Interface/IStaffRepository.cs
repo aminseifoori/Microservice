@@ -1,6 +1,6 @@
 ﻿using Employee.Model;
 
-namespace Employee.Interface
+namespace Employee.Repository.Interface
 {
     public interface IStaffRepository
     {

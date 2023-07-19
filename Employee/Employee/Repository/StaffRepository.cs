@@ -1,5 +1,5 @@
-﻿using Employee.Interface;
-using Employee.Model;
+﻿using Employee.Model;
+using Employee.Repository.Interface;
 using MongoDB.Driver;
 using SharpCompress.Common;
 
@@ -11,10 +11,8 @@ namespace Employee.Repository
         private readonly IMongoCollection<Staff> dbCollection;
         private readonly FilterDefinitionBuilder<Staff> filterBuilder = Builders<Staff>.Filter;
 
-        public StaffRepository()
+        public StaffRepository(IMongoDatabase database)
         {
-            var mongoClient = new MongoClient("mongodb://localhost:27017");
-            var database = mongoClient.GetDatabase("Employee");
             dbCollection = database.GetCollection<Staff>(collectionName);
         }
 
