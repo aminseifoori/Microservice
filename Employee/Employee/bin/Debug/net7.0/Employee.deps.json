@@ -8,9 +8,8 @@
     ".NETCoreApp,Version=v7.0": {
       "Employee/1.0.0": {
         "dependencies": {
-          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "Microsoft.AspNetCore.OpenApi": "7.0.9",
-          "MongoDB-Microservice-Common-Package": "1.0.0",
+          "MongoDB-Microservice-Common-Package": "1.0.1",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {
@@ -134,8 +133,9 @@
           "System.Security.Principal.Windows": "5.0.0"
         }
       },
-      "MongoDB-Microservice-Common-Package/1.0.0": {
+      "MongoDB-Microservice-Common-Package/1.0.1": {
         "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "Microsoft.Extensions.Configuration": "7.0.0",
           "Microsoft.Extensions.Configuration.Binder": "7.0.4",
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
@@ -143,8 +143,8 @@
         },
         "runtime": {
           "lib/net7.0/Common.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.0.1.0",
+            "fileVersion": "1.0.1.0"
           }
         }
       },
@@ -429,12 +429,12 @@
       "path": "microsoft.win32.registry/5.0.0",
       "hashPath": "microsoft.win32.registry.5.0.0.nupkg.sha512"
     },
-    "MongoDB-Microservice-Common-Package/1.0.0": {
+    "MongoDB-Microservice-Common-Package/1.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6ftmST881P5KCQckzWK0yJQF0BNCCo2CgNhyBaH5wuoKkE5MR1E/itd1Ql4kXsXFeExO+4jQhH15DSPgX/2HnA==",
-      "path": "mongodb-microservice-common-package/1.0.0",
-      "hashPath": "mongodb-microservice-common-package.1.0.0.nupkg.sha512"
+      "sha512": "sha512-ThTLhChBlmk81RBNg189hzNpZ0Fs/lxDPEEHpZ+4P81KIe3N/xrI9oCqlSDra6BBy5eMhT6qgzHbajZvMRg3rQ==",
+      "path": "mongodb-microservice-common-package/1.0.1",
+      "hashPath": "mongodb-microservice-common-package.1.0.1.nupkg.sha512"
     },
     "MongoDB.Bson/2.20.0": {
       "type": "package",

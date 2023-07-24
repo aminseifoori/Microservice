@@ -299,9 +299,10 @@
           }
         }
       },
-      "MongoDB-Microservice-Common-Package/1.0.0": {
+      "MongoDB-Microservice-Common-Package/1.0.1": {
         "type": "package",
         "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "Microsoft.Extensions.Configuration": "7.0.0",
           "Microsoft.Extensions.Configuration.Binder": "7.0.4",
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
@@ -1267,14 +1268,14 @@
         "version.txt"
       ]
     },
-    "MongoDB-Microservice-Common-Package/1.0.0": {
-      "sha512": "6ftmST881P5KCQckzWK0yJQF0BNCCo2CgNhyBaH5wuoKkE5MR1E/itd1Ql4kXsXFeExO+4jQhH15DSPgX/2HnA==",
+    "MongoDB-Microservice-Common-Package/1.0.1": {
+      "sha512": "ThTLhChBlmk81RBNg189hzNpZ0Fs/lxDPEEHpZ+4P81KIe3N/xrI9oCqlSDra6BBy5eMhT6qgzHbajZvMRg3rQ==",
       "type": "package",
-      "path": "mongodb-microservice-common-package/1.0.0",
+      "path": "mongodb-microservice-common-package/1.0.1",
       "files": [
         ".nupkg.metadata",
         "lib/net7.0/Common.dll",
-        "mongodb-microservice-common-package.1.0.0.nupkg.sha512",
+        "mongodb-microservice-common-package.1.0.1.nupkg.sha512",
         "mongodb-microservice-common-package.nuspec"
       ]
     },
@@ -1678,9 +1679,8 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
       "Microsoft.AspNetCore.OpenApi >= 7.0.9",
-      "MongoDB-Microservice-Common-Package >= 1.0.0",
+      "MongoDB-Microservice-Common-Package >= 1.0.1",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
@@ -1733,17 +1733,13 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
-          "AutoMapper.Extensions.Microsoft.DependencyInjection": {
-            "target": "Package",
-            "version": "[12.0.1, )"
-          },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[7.0.9, )"
           },
           "MongoDB-Microservice-Common-Package": {
             "target": "Package",
-            "version": "[1.0.0, )"
+            "version": "[1.0.1, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
