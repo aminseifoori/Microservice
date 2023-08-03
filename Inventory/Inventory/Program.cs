@@ -1,6 +1,12 @@
 
 using Common.Extenstions;
+using Common.Settings;
+using Inventory.Clients;
 using Inventory.Model;
+using Inventory.Setting;
+using Microsoft.Extensions.Configuration;
+using Polly;
+using Polly.Timeout;
 
 namespace Inventory
 {
@@ -12,6 +18,21 @@ namespace Inventory
 
             builder.Services.AddMondoDb(builder.Configuration);
             builder.Services.AddRepository<AssignedInventory>("assignedInventories");
+
+            builder.Services.AddHttpClient<EmployeeClient>(client =>
+            {
+                var rootBase = builder.Configuration.GetSection(nameof(EmployeeClientService)).Get<EmployeeClientService>();
+                client.BaseAddress = new Uri(rootBase.BaseRoot);
+            })
+            .AddTransientHttpErrorPolicy(option => option.Or<TimeoutRejectedException>().WaitAndRetryAsync(
+                 5,
+                 retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))
+                ))
+            .AddTransientHttpErrorPolicy(option => option.Or<TimeoutRejectedException>().CircuitBreakerAsync(
+                3,
+                TimeSpan.FromSeconds(15)
+                ))
+            .AddPolicyHandler(Policy.TimeoutAsync<HttpResponseMessage>(2)); //Set timeout for http request
             // Add services to the container.
 
             builder.Services.AddControllers(options =>
