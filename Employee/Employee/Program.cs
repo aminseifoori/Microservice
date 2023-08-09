@@ -1,4 +1,5 @@
 using Common.Extenstions;
+using Common.MassTransit;
 using Common.Settings;
 using Employee.Model;
 using Employee.Repository;
@@ -16,6 +17,8 @@ namespace Employee
             var serviceSettings = builder.Configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
             //Use the Extension to add mongo DB
             builder.Services.AddMondoDb(builder.Configuration);
+
+            builder.Services.MassTransite(builder.Configuration);
 
             // Add services to the container.
             builder.Services.AddControllers(options =>

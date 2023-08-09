@@ -78,7 +78,7 @@ namespace Inventory.Controllers
             var inventoryDto = mapper.Map<AssignedAssetToStaffDto>(inventory);
             var staff = await employeeClient.GetStaffInformationAsync(inventoryDto.StaffId);
             inventoryDto.StaffName = staff.Name;
-            inventoryDto.StaffDescription = staff.Description;
+            inventoryDto.StaffDescription = staff.Description;   
             return Ok(inventoryDto);
         }
 

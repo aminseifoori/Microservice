@@ -48,3 +48,11 @@ C:\Projects\Microservice\Employee\Employee\obj\Debug\net7.0\ref\Employee.dll
 C:\Projects\Microservice\Employee\Employee\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Projects\Microservice\Employee\Employee\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Binder.dll
 C:\Projects\Microservice\Employee\Employee\bin\Debug\net7.0\Common.dll
+C:\Projects\Microservice\Employee\employee\bin\Debug\net7.0\MassTransit.dll
+C:\Projects\Microservice\Employee\employee\bin\Debug\net7.0\MassTransit.Abstractions.dll
+C:\Projects\Microservice\Employee\employee\bin\Debug\net7.0\MassTransit.AspNetCoreIntegration.dll
+C:\Projects\Microservice\Employee\employee\bin\Debug\net7.0\MassTransit.ExtensionsDependencyInjectionIntegration.dll
+C:\Projects\Microservice\Employee\employee\bin\Debug\net7.0\MassTransit.RabbitMqTransport.dll
+C:\Projects\Microservice\Employee\employee\bin\Debug\net7.0\RabbitMQ.Client.dll
+C:\Projects\Microservice\Employee\employee\bin\Debug\net7.0\Contracts.dll
+C:\Projects\Microservice\Employee\employee\bin\Debug\net7.0\Contracts.pdb

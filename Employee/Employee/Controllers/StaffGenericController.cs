@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using Common;
+using Contracts;
 using Employee.Dtos;
 using Employee.Model;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Employee.Controllers
@@ -12,11 +14,14 @@ namespace Employee.Controllers
     {
         private readonly IMapper mapper;
         private readonly IRepository<Staff> repository;
+        private readonly IPublishEndpoint publishEndpoint;
 
-        public StaffGenericController(IMapper _mapper, IRepository<Staff> _repository)
+        public StaffGenericController(IMapper _mapper, IRepository<Staff> _repository,
+            IPublishEndpoint _publishEndpoint)
         {
             mapper = _mapper;
             repository = _repository;
+            publishEndpoint = _publishEndpoint;
         }
 
         [HttpGet]
@@ -42,6 +47,11 @@ namespace Employee.Controllers
             var staff = mapper.Map<Staff>(staffDto);
             staff.CreatedDate = DateTime.Now;
             await repository.CreateAsync(staff);
+
+            var staffCreated = mapper.Map<StaffCreated>(staff);
+
+            await publishEndpoint.Publish(staffCreated);
+
             return CreatedAtAction(nameof(GetById), new { id = staff.Id }, staff);
         }
 
@@ -55,6 +65,9 @@ namespace Employee.Controllers
             }
             mapper.Map(updateStaffDto, staff);
             await repository.UpdateAsync(staff);
+
+            await publishEndpoint.Publish(mapper.Map<StaffUpdated>(staff));
+
             return NoContent();
         }
 
@@ -67,6 +80,9 @@ namespace Employee.Controllers
                 return NotFound();
             }
             await repository.RemoveAsync(id);
+
+            await publishEndpoint.Publish(mapper.Map<StaffDeleted>(staff));
+
             return NoContent();
         }
     }

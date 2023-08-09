@@ -6,6 +6,7 @@ using MongoDB.Driver;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Common.Repository;
+using MassTransit;
 
 namespace Common.Extenstions
 {
@@ -36,5 +37,7 @@ namespace Common.Extenstions
                 return new Repository<T>(db, collectionName);
             });
         }
+
+
     }
 }

@@ -58,7 +58,7 @@
             },
             "MongoDB-Microservice-Common-Package": {
               "target": "Package",
-              "version": "[1.0.1, )"
+              "version": "[1.0.3, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
