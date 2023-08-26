@@ -463,7 +463,7 @@
           }
         }
       },
-      "MongoDB-Microservice-Common-Package/1.0.3": {
+      "MongoDB-Microservice-Common-Package/1.0.4": {
         "type": "package",
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
@@ -1783,14 +1783,14 @@
         "version.txt"
       ]
     },
-    "MongoDB-Microservice-Common-Package/1.0.3": {
-      "sha512": "/AjrwRRdCCpX4g1fRAzNN0YCc2rSLEfGHMwP0uOar1dIiMZGqKPKj5ytYfLyiziD5lBeEAWcunocHy9x63p8zw==",
+    "MongoDB-Microservice-Common-Package/1.0.4": {
+      "sha512": "ohf8OBkKNLZNATCBEzc3pK2Xi5+J9so4dXQacNDm/1M6YVXvn8ZoRQbxX5RW+WNJLVyaYtJip9SBk06PKSnAEA==",
       "type": "package",
-      "path": "mongodb-microservice-common-package/1.0.3",
+      "path": "mongodb-microservice-common-package/1.0.4",
       "files": [
         ".nupkg.metadata",
         "lib/net7.0/Common.dll",
-        "mongodb-microservice-common-package.1.0.3.nupkg.sha512",
+        "mongodb-microservice-common-package.1.0.4.nupkg.sha512",
         "mongodb-microservice-common-package.nuspec"
       ]
     },
@@ -2480,7 +2480,7 @@
     "net7.0": [
       "Contracts >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.9",
-      "MongoDB-Microservice-Common-Package >= 1.0.3",
+      "MongoDB-Microservice-Common-Package >= 1.0.4",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
@@ -2543,7 +2543,7 @@
           },
           "MongoDB-Microservice-Common-Package": {
             "target": "Package",
-            "version": "[1.0.3, )"
+            "version": "[1.0.4, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

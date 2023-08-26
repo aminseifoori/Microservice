@@ -51,3 +51,10 @@ C:\Projects\Microservice\Inventory\Inventory\bin\Debug\net7.0\runtimes\win\nativ
 C:\Projects\Microservice\Inventory\Inventory\bin\Debug\net7.0\Microsoft.Extensions.Http.Polly.dll
 C:\Projects\Microservice\Inventory\Inventory\bin\Debug\net7.0\Polly.dll
 C:\Projects\Microservice\Inventory\Inventory\bin\Debug\net7.0\Polly.Extensions.Http.dll
+C:\Projects\Microservice\Inventory\Inventory\bin\Debug\net7.0\Contracts.dll
+C:\Projects\Microservice\Inventory\Inventory\bin\Debug\net7.0\MassTransit.dll
+C:\Projects\Microservice\Inventory\Inventory\bin\Debug\net7.0\MassTransit.Abstractions.dll
+C:\Projects\Microservice\Inventory\Inventory\bin\Debug\net7.0\MassTransit.AspNetCoreIntegration.dll
+C:\Projects\Microservice\Inventory\Inventory\bin\Debug\net7.0\MassTransit.ExtensionsDependencyInjectionIntegration.dll
+C:\Projects\Microservice\Inventory\Inventory\bin\Debug\net7.0\MassTransit.RabbitMqTransport.dll
+C:\Projects\Microservice\Inventory\Inventory\bin\Debug\net7.0\RabbitMQ.Client.dll

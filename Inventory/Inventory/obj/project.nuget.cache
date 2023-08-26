@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LwKM0BnkHVcJY8EBPGqpdWn16kJLIMgsgbC9ia07Fkp9pBbDHhJPHTMWSYyagXpC7BISVi8pm0GgHqbQ9qMsOw==",
+  "dgSpecHash": "SmYXRLxLnG5Zul4RUOcZ5UEq8WpX0D+5tBG/fEBA14dXedkFepLL1p7Qsoi2/cjN4+/kmZUoNZ72ywlkbfLQQg==",
   "success": true,
   "projectFilePath": "C:\\Projects\\Microservice\\Inventory\\Inventory\\Inventory.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\amins\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\amins\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\amins\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
+    "C:\\Users\\amins\\.nuget\\packages\\contracts\\1.0.0\\contracts.1.0.0.nupkg.sha512",
     "C:\\Users\\amins\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\amins\\.nuget\\packages\\masstransit\\8.0.16\\masstransit.8.0.16.nupkg.sha512",
     "C:\\Users\\amins\\.nuget\\packages\\masstransit.abstractions\\8.0.16\\masstransit.abstractions.8.0.16.nupkg.sha512",
@@ -35,7 +36,7 @@
     "C:\\Users\\amins\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\amins\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
     "C:\\Users\\amins\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
-    "C:\\Users\\amins\\.nuget\\packages\\mongodb-microservice-common-package\\1.0.3\\mongodb-microservice-common-package.1.0.3.nupkg.sha512",
+    "C:\\Users\\amins\\.nuget\\packages\\mongodb-microservice-common-package\\1.0.4\\mongodb-microservice-common-package.1.0.4.nupkg.sha512",
     "C:\\Users\\amins\\.nuget\\packages\\mongodb.bson\\2.20.0\\mongodb.bson.2.20.0.nupkg.sha512",
     "C:\\Users\\amins\\.nuget\\packages\\mongodb.driver\\2.20.0\\mongodb.driver.2.20.0.nupkg.sha512",
     "C:\\Users\\amins\\.nuget\\packages\\mongodb.driver.core\\2.20.0\\mongodb.driver.core.2.20.0.nupkg.sha512",

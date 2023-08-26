@@ -1,5 +1,6 @@
 
 using Common.Extenstions;
+using Common.MassTransit;
 using Common.Settings;
 using Inventory.Clients;
 using Inventory.Model;
@@ -17,22 +18,13 @@ namespace Inventory
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddMondoDb(builder.Configuration);
-            builder.Services.AddRepository<AssignedInventory>("assignedInventories");
 
-            builder.Services.AddHttpClient<EmployeeClient>(client =>
-            {
-                var rootBase = builder.Configuration.GetSection(nameof(EmployeeClientService)).Get<EmployeeClientService>();
-                client.BaseAddress = new Uri(rootBase.BaseRoot);
-            })
-            .AddTransientHttpErrorPolicy(option => option.Or<TimeoutRejectedException>().WaitAndRetryAsync(
-                 5,
-                 retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))
-                ))
-            .AddTransientHttpErrorPolicy(option => option.Or<TimeoutRejectedException>().CircuitBreakerAsync(
-                3,
-                TimeSpan.FromSeconds(15)
-                ))
-            .AddPolicyHandler(Policy.TimeoutAsync<HttpResponseMessage>(2)); //Set timeout for http request
+            builder.Services.AddRepository<AssignedInventory>("assignedInventories");
+            builder.Services.AddRepository<StaffEntity>("staffentity");
+
+            builder.Services.MassTransite(builder.Configuration);
+
+            AddEmployeeService(builder);
             // Add services to the container.
 
             builder.Services.AddControllers(options =>
@@ -62,6 +54,24 @@ namespace Inventory
             app.MapControllers();
 
             app.Run();
+        }
+
+        private static void AddEmployeeService(WebApplicationBuilder builder)
+        {
+            builder.Services.AddHttpClient<EmployeeClient>(client =>
+            {
+                var rootBase = builder.Configuration.GetSection(nameof(EmployeeClientService)).Get<EmployeeClientService>();
+                client.BaseAddress = new Uri(rootBase.BaseRoot);
+            })
+            .AddTransientHttpErrorPolicy(option => option.Or<TimeoutRejectedException>().WaitAndRetryAsync(
+                 5,
+                 retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))
+                ))
+            .AddTransientHttpErrorPolicy(option => option.Or<TimeoutRejectedException>().CircuitBreakerAsync(
+                3,
+                TimeSpan.FromSeconds(15)
+                ))
+            .AddPolicyHandler(Policy.TimeoutAsync<HttpResponseMessage>(2)); //Set timeout for http request
         }
     }
 }

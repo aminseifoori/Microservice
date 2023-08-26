@@ -20,6 +20,10 @@ namespace Common.MassTransit
                     configurator.Host(rabbitMQSettings?.Host);
                     configurator.ConfigureEndpoints
                         (context, new KebabCaseEndpointNameFormatter(serviceSettings?.ServiceName, false));
+                    configurator.UseMessageRetry(retryConfig =>
+                    {
+                        retryConfig.Interval(3, TimeSpan.FromSeconds(5));
+                    });
                 });
             });
 

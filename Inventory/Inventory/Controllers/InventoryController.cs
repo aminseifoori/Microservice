@@ -14,20 +14,22 @@ namespace Inventory.Controllers
     {
         private readonly IMapper mapper;
         private readonly IRepository<AssignedInventory> repository;
-        private readonly EmployeeClient employeeClient;
+        private readonly IRepository<StaffEntity> staffRepository;
 
-        public InventoryController(IMapper _mapper,IRepository<AssignedInventory> _repository, EmployeeClient _employeeClient)
+        public InventoryController(IMapper _mapper,IRepository<AssignedInventory> _repository,
+            IRepository<StaffEntity> _staffRepository)
         {
             mapper = _mapper;
             repository = _repository;
-            employeeClient = _employeeClient;
+            staffRepository = _staffRepository;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAllAsync()
         {
             var inventorylist = await repository.GetAllAsync();
-            var stafflist = await employeeClient.GetAllStaff();
+            var staffIds = inventorylist.Select(i => i.StaffId);
+            var stafflist = await staffRepository.GetAllAsync(x=> staffIds.Contains(x.Id));
             var joinedInventoryStaff = inventorylist
                 .Join(stafflist, i => i.StaffId, s => s.Id, (i, s) => new { i, s })
                 .Select(s => new AssignedAssetToStaffDto
@@ -46,7 +48,7 @@ namespace Inventory.Controllers
         {
             var inventorylist = await repository.GetAllAsync(x=> x.StaffId == staffId);
 
-            var stafflist = await employeeClient.GetAllStaff();
+            var stafflist = await staffRepository.GetAllAsync();
             var joinedInventoryStaff = inventorylist
                 .Join(stafflist, i => i.StaffId, s => s.Id, (i, s) => new { i, s })
                 .Select(s => new AssignedAssetToStaffDto
@@ -65,7 +67,7 @@ namespace Inventory.Controllers
         {
             var inventory = await repository.GetByIdAsync(x => x.AssetId == assetId);
             var inventoryDto = mapper.Map<AssignedAssetToStaffDto>(inventory);
-            var staff = await employeeClient.GetStaffInformationAsync(inventoryDto.StaffId) ;
+            var staff = await staffRepository.GetByIdAsync(inventoryDto.StaffId) ;
             inventoryDto.StaffName = staff.Name;
             inventoryDto.StaffDescription = staff.Description;
             return Ok(inventoryDto);
@@ -76,7 +78,7 @@ namespace Inventory.Controllers
         {
             var inventory = await repository.GetByIdAsync(id);
             var inventoryDto = mapper.Map<AssignedAssetToStaffDto>(inventory);
-            var staff = await employeeClient.GetStaffInformationAsync(inventoryDto.StaffId);
+            var staff = await staffRepository.GetByIdAsync(inventoryDto.StaffId);
             inventoryDto.StaffName = staff.Name;
             inventoryDto.StaffDescription = staff.Description;   
             return Ok(inventoryDto);

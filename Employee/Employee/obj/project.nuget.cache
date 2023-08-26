@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SuULgGRi3wOZQMkYQQ6OtWKiS0vpBV5QsHgv676HLYlH6z1dBJpesiZPV4R7D3GyX4u0cl3vsLOwNE7Ux9vjyA==",
+  "dgSpecHash": "jEUgOBiyzHHrn419yWVm6Myho6YXyqr8I1m9ETwsoIYNAN/ePVGhDFEkPTrdS0hYCqSuwLTHeBSQQTzzhLuotw==",
   "success": true,
   "projectFilePath": "C:\\Projects\\Microservice\\Employee\\Employee\\Employee.csproj",
   "expectedPackageFiles": [
@@ -32,7 +32,7 @@
     "C:\\Users\\amins\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\amins\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
     "C:\\Users\\amins\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
-    "C:\\Users\\amins\\.nuget\\packages\\mongodb-microservice-common-package\\1.0.3\\mongodb-microservice-common-package.1.0.3.nupkg.sha512",
+    "C:\\Users\\amins\\.nuget\\packages\\mongodb-microservice-common-package\\1.0.4\\mongodb-microservice-common-package.1.0.4.nupkg.sha512",
     "C:\\Users\\amins\\.nuget\\packages\\mongodb.bson\\2.20.0\\mongodb.bson.2.20.0.nupkg.sha512",
     "C:\\Users\\amins\\.nuget\\packages\\mongodb.driver\\2.20.0\\mongodb.driver.2.20.0.nupkg.sha512",
     "C:\\Users\\amins\\.nuget\\packages\\mongodb.driver.core\\2.20.0\\mongodb.driver.core.2.20.0.nupkg.sha512",
@@ -55,7 +55,8 @@
     "C:\\Users\\amins\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\amins\\.nuget\\packages\\system.text.json\\6.0.7\\system.text.json.6.0.7.nupkg.sha512",
     "C:\\Users\\amins\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512",
-    "C:\\Users\\amins\\.nuget\\packages\\zstdsharp.port\\0.6.2\\zstdsharp.port.0.6.2.nupkg.sha512"
+    "C:\\Users\\amins\\.nuget\\packages\\zstdsharp.port\\0.6.2\\zstdsharp.port.0.6.2.nupkg.sha512",
+    "C:\\Users\\amins\\.nuget\\packages\\contracts\\1.0.0\\contracts.1.0.0.nupkg.sha512"
   ],
   "logs": []
 }

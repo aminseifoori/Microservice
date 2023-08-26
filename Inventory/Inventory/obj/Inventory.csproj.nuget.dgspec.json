@@ -48,6 +48,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Contracts": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.9, )"
@@ -58,7 +62,7 @@
             },
             "MongoDB-Microservice-Common-Package": {
               "target": "Package",
-              "version": "[1.0.3, )"
+              "version": "[1.0.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
